@@ -3,14 +3,24 @@ using BenchmarkDotNet.Running;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-var test = new ListTests();
-//test.Capacity();
-test.LinkedList();
+//DEMO 1
 
-return;
+MathHelper.Sum(5, 7);
 
-Stack.Push(5);
-Stack.Push(7);
-var i = MathHelper2.Sum(); // FactorialRec();
-Console.WriteLine(i);
+//DEMO 2
 
+//Stack.Push(5);
+//Stack.Push(7);
+//var i = MathHelper2.Sum();
+//Console.WriteLine(i);
+
+//DEMO 3
+
+//Stack.Push(7);
+//var i = MathHelper2.FactorialRec();
+//Console.WriteLine(i);
+
+//DEMO LIST
+
+//var test = new ListTests();
+//test.Insert();

@@ -9,7 +9,7 @@ public class ListTests
 {
     public void Capacity()
     {
-        var l = new List<int>(5);
+        var l = new List<int>();
 
         l.Add(1);
         l.Add(2);
@@ -20,28 +20,28 @@ public class ListTests
     }
     public void Add()
     {
-        var l = new List<Item>(1_000_000);
-        for (int i = 0; i < 1_000_000; i++)
+        var l = new List<Item>(100_000);
+        for (int i = 0; i < 100_000; i++)
             l.Add(new Item());
     }
     public void Insert()
     {
         var sw = Stopwatch.StartNew();
 
-        var l = new List<Item>(200_000);
+        var l = new List<Item>();
         for (int i = 0; i < 200_000; i++)
             l.Insert(0, new Item());
         sw.Stop();
 
         Console.WriteLine(sw.Elapsed);
     }
-    public void LinkedList() //Circular buffers
+    public void LinkedList()
     {
         var sw = Stopwatch.StartNew();
 
         var l = new LinkedList<Item>();
         for (int i = 0; i < 200_000; i++)
-            l.AddFirst(new Item());
+            l.AddLast(new Item());
         sw.Stop();
 
         Console.WriteLine(sw.Elapsed);
@@ -49,6 +49,7 @@ public class ListTests
     }
 public class Item
 {
+    long x;
 }
 
 public class CircularArray<T>

@@ -5,9 +5,6 @@
         var a = Stack.Read(-2);
         var b = Stack.Read(-1);
 
-        Stack.Push(b);
-        b = FactorialRec();
-
         Stack.Pop();
         Stack.Pop();
 
@@ -20,16 +17,16 @@
     }
     public static int Factorial() //int x, local int tmp
     {
-        ref int i = ref Stack.buffer[1];
-        ref int tmp = ref Stack.buffer[1];
+        ref int x = ref Stack.Read(-1);
 
-        Stack.Push(1);
-        while (Stack.Read(0) > 0)
+        var result = Stack.Push(1);
+        while (x > 0)
         {
-            Stack.Push(Stack.Read(1) * Stack.Read(0));
-            Stack.Push(Stack.Read(0) - 1);
+            result = result * x;
+            x--;
         }
-        return Stack.Read(1);
+
+        return result; 
     }
     public static int FactorialRec() //int f
     {
